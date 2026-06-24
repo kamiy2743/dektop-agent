@@ -1,0 +1,67 @@
+name: desktop-agent-prd
+
+services:
+  ollama:
+    image: ollama/ollama:0.30.10
+    volumes:
+      - ollama-data:/root/.ollama/
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    ports:
+      - "127.0.0.1:20001:11434"
+    networks:
+      - egress
+    restart: unless-stopped
+
+  voicevox:
+    image: voicevox/voicevox_engine:nvidia-ubuntu22.04-0.26.0-dev
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "127.0.0.1:20002:50021"
+    networks:
+      - egress
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+      MYSQL_USER_FILE: /run/secrets/mysql_user
+      MYSQL_PASSWORD_FILE: /run/secrets/mysql_user_password
+      MYSQL_DATABASE: dektop-agent
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+    volumes:
+      - mysql-data:/var/lib/mysql/
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "127.0.0.1:20003:3306"
+    networks:
+      - egress
+    secrets:
+      - mysql_root_password
+      - mysql_user
+      - mysql_user_password
+    restart: unless-stopped
+
+networks:
+  egress:
+
+volumes:
+  ollama-data:
+    name: desktop-agent-ollama-data
+  mysql-data:
+
+secrets:
+  mysql_root_password:
+    file: ./secrets/prd/mysql_root_password
+  mysql_user:
+    file: ./secrets/prd/mysql_user
+  mysql_user_password:
+    file: ./secrets/prd/mysql_user_password
