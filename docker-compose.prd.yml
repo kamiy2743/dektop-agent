@@ -3,6 +3,14 @@ name: desktop-agent-prd
 services:
   ollama:
     image: ollama/ollama:0.30.10
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities:
+                - gpu
     volumes:
       - ollama-data:/root/.ollama/
     cap_drop:
@@ -18,6 +26,14 @@ services:
 
   voicevox:
     image: voicevox/voicevox_engine:nvidia-ubuntu22.04-0.26.0-dev
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities:
+                - gpu
     security_opt:
       - no-new-privileges:true
     ports:
