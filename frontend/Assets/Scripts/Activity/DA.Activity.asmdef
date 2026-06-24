@@ -1,0 +1,6 @@
+{
+    "name": "DA.Activity",
+    "rootNamespace": "DA.Activity",
+    "references": ["DA.Settings", "UniTask", "UnityEngine.CoreModule", "UnityEngine.JSONSerializeModule"],
+    "autoReferenced": true
+}

@@ -15,10 +15,6 @@ $validActions = @("up", "down", "restart", "recreate")
 function Show-Usage {
     Write-Host "Usage: .\da.cmd {dev|prd} {up|down|restart|recreate}"
     Write-Host "       .\da.cmd {dev|prd} {docker compose args}"
-    Write-Host "       .\da.cmd init"
-    Write-Host "       .\da.ps1 {dev|prd} {up|down|restart|recreate}"
-    Write-Host "       .\da.ps1 {dev|prd} {docker compose args}"
-    Write-Host "       .\da.ps1 init"
 }
 
 function Read-DotEnv {
@@ -78,42 +74,6 @@ function Invoke-Docker {
 
 if ($null -eq $Arguments) {
     $Arguments = @()
-}
-
-if ($Command -eq "init") {
-    if ($Arguments.Count -gt 0) {
-        [Console]::Error.WriteLine("init does not take an environment or action.")
-        Show-Usage
-        exit 1
-    }
-
-    $composeFile = Join-Path $PSScriptRoot "docker-compose.dev.yml"
-
-    if (-not (Test-Path -LiteralPath $composeFile)) {
-        [Console]::Error.WriteLine("Compose file not found: $composeFile")
-        exit 1
-    }
-
-    $dockerArgs = @("compose", "-f", $composeFile)
-    $envFile = Join-Path $PSScriptRoot ".env"
-    $envValues = Read-DotEnv -Path $envFile
-    $modelKeys = @("WATCH_MODEL", "CHAT_MODEL")
-
-    foreach ($modelKey in $modelKeys) {
-        if (-not $envValues.ContainsKey($modelKey) -or [string]::IsNullOrWhiteSpace($envValues[$modelKey])) {
-            [Console]::Error.WriteLine("Missing $modelKey in $envFile")
-            exit 1
-        }
-    }
-
-    Invoke-Docker -Arguments ($dockerArgs + @("up", "-d", "ollama"))
-
-    foreach ($modelKey in $modelKeys) {
-        $model = $envValues[$modelKey]
-        Invoke-Docker -Arguments ($dockerArgs + @("exec", "-T", "ollama", "ollama", "pull", $model))
-    }
-
-    exit 0
 }
 
 if ($validEnvironments -notcontains $Command) {

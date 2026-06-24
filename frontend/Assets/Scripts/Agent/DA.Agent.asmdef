@@ -1,0 +1,19 @@
+{
+    "name": "DA.Agent",
+    "rootNamespace": "DA.Agent",
+    "references": [
+        "DA.Activity",
+        "DA.Conversation",
+        "DA.Logging",
+        "DA.ScreenCapture",
+        "DA.Settings",
+        "DA.Speech",
+        "DA.Vision",
+        "DA.Watch",
+        "UniTask",
+        "UnityEngine.CoreModule",
+        "UnityEngine.AudioModule",
+        "UnityEngine.ImageConversionModule"
+    ],
+    "autoReferenced": true
+}

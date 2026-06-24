@@ -1,0 +1,6 @@
+{
+    "name": "DA.ScreenCapture",
+    "rootNamespace": "DA.ScreenCapture",
+    "references": ["UniTask"],
+    "autoReferenced": true
+}

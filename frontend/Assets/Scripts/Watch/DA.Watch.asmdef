@@ -1,0 +1,11 @@
+{
+    "name": "DA.Watch",
+    "rootNamespace": "DA.Watch",
+    "references": [
+        "DA.Activity",
+        "DA.Settings",
+        "UniTask",
+        "UnityEngine.CoreModule"
+    ],
+    "autoReferenced": true
+}

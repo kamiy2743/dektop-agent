@@ -1,0 +1,6 @@
+{
+    "name": "DA.Conversation",
+    "rootNamespace": "DA.Conversation",
+    "references": ["DA.Activity", "DA.Settings", "UniTask", "UnityEngine.CoreModule", "UnityEngine.JSONSerializeModule"],
+    "autoReferenced": true
+}

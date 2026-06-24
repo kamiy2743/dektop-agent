@@ -1,0 +1,6 @@
+{
+    "name": "DA.Vision",
+    "rootNamespace": "DA.Vision",
+    "references": ["DA.Settings", "UniTask", "UnityEngine.CoreModule", "UnityEngine.JSONSerializeModule"],
+    "autoReferenced": true
+}

@@ -1,0 +1,6 @@
+{
+    "name": "DA.Speech",
+    "rootNamespace": "DA.Speech",
+    "references": ["DA.Settings", "UniTask"],
+    "autoReferenced": true
+}

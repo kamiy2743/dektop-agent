@@ -1,0 +1,7 @@
+{
+    "name": "DA.Settings",
+    "rootNamespace": "DA.Settings",
+    "references": [],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}

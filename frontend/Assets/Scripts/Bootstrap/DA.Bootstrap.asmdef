@@ -1,0 +1,29 @@
+{
+    "name": "DA.Bootstrap",
+    "rootNamespace": "DA.Bootstrap",
+    "references": [
+        "VContainer",
+        "UniTask",
+        "GameKit.DependencyInjection",
+        "DA.Activity",
+        "DA.Agent",
+        "DA.Conversation",
+        "DA.Logging",
+        "DA.ScreenCapture",
+        "DA.Settings",
+        "DA.Speech",
+        "DA.Vision",
+        "DA.Watch",
+        "DA.UI",
+        "UnityEngine.CoreModule"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

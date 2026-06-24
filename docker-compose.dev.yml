@@ -1,31 +1,6 @@
 name: desktop-agent-dev
 
 services:
-  ollama:
-    image: ollama/ollama:0.30.10
-    environment:
-      LLAMA_ARG_CACHE_RAM: "0"
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities:
-                - gpu
-    volumes:
-      - ollama-data:/root/.ollama/
-    cap_drop:
-      - ALL
-    security_opt:
-      - no-new-privileges:true
-    read_only: true
-    ports:
-      - "127.0.0.1:10001:11434"
-    networks:
-      - egress
-    restart: unless-stopped
-
   voicevox:
     image: voicevox/voicevox_engine:nvidia-ubuntu22.04-0.26.0-dev
     deploy:
@@ -39,7 +14,7 @@ services:
     security_opt:
       - no-new-privileges:true
     ports:
-      - "127.0.0.1:10002:50021"
+      - "127.0.0.1:10001:50021"
     networks:
       - egress
     restart: unless-stopped
@@ -59,7 +34,7 @@ services:
     security_opt:
       - no-new-privileges:true
     ports:
-      - "127.0.0.1:10003:3306"
+      - "127.0.0.1:10002:3306"
     networks:
       - egress
     secrets:
@@ -72,8 +47,6 @@ networks:
   egress:
 
 volumes:
-  ollama-data:
-    name: desktop-agent-ollama-data
   mysql-data:
 
 secrets:

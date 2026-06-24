@@ -1,0 +1,17 @@
+{
+    "name": "DA.UI",
+    "rootNamespace": "DA.UI",
+    "references": [
+        "DA.Activity",
+        "DA.Agent",
+        "DA.Conversation",
+        "DA.Logging",
+        "DA.ScreenCapture",
+        "DA.Settings",
+        "DA.Watch",
+        "UnityEngine.CoreModule",
+        "UnityEngine.IMGUIModule",
+        "UnityEngine.ImageConversionModule"
+    ],
+    "autoReferenced": true
+}
