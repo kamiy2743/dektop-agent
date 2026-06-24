@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-Assets-Shared
+  m_GUID: 2451b33eaa778a64eaf52a029e2718da
+  m_SerializeEntries:
+  - m_GUID: 045633ee230d54c47963d4c7bc335ba2
+    m_Address: Packages/com.kamiy2743.game-kit/ScreenResolution/LocalizationTables/GameKit.ScreenResolution
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09d65b98146355c469290f4c81fa0d91
+    m_Address: Packages/com.kamiy2743.game-kit/UIComponent/LocalizationTables/Button/GameKit.Button
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea46bb6316019ff4dbd76f93a8f7047a
+    m_Address: Packages/com.kamiy2743.game-kit/Setting/LocalizationTables/GameKit.Setting
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdb646c0d1bc372459651c11f49accd3
+    m_Address: Packages/com.kamiy2743.game-kit/Language/LocalizationTables/GameKit.Language
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: c6da0a789127ce64fa45f480ba6093e8, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 90f37d367f189374398220e4bc0fd776, type: 2}
+    - {fileID: 11400000, guid: e80f464592e6d4040b5131479d3b780a, type: 2}

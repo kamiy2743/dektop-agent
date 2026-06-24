@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: "Localization-String-Tables-\u65E5\u672C\u8A9E"
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: "Localization-String-Tables-\u65E5\u672C\u8A9E"
+  m_GUID: 4439042461694fa4e9415eff88a8eb43
+  m_SerializeEntries:
+  - m_GUID: 415b548e03a7a4f4a895ba9e625a517f
+    m_Address: GameKit.ScreenResolution_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 735a66565e349154788b09266a6444d8
+    m_Address: GameKit.Language_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d244203cd52a6784284ce4e1c18a7d51
+    m_Address: GameKit.Button_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e87b0b185e978e3448d7ec5ccbdf473b
+    m_Address: GameKit.Setting_ja
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ja
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: c6da0a789127ce64fa45f480ba6093e8, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6beffc8ce22f8c54ca3ed02b19469ec8, type: 2}
+    - {fileID: 11400000, guid: 3345dcd959af88e44b79b99f435eb00d, type: 2}
