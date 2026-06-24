@@ -3,6 +3,8 @@ name: desktop-agent-prd
 services:
   ollama:
     image: ollama/ollama:0.30.10
+    environment:
+      LLAMA_ARG_CACHE_RAM: "0"
     deploy:
       resources:
         reservations:
