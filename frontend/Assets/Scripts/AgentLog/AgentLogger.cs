@@ -4,9 +4,10 @@ using UnityEngine;
 
 namespace DA.Logging
 {
-    public sealed class Logger
+    public sealed class AgentLogger
     {
         string? logFilePath;
+        public string LogFilePath => logFilePath ?? string.Empty;
 
         public void Initialize()
         {

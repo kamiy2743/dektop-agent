@@ -10,28 +10,28 @@ namespace DA.SetUpPage
 {
     public sealed class SetUpPagePresenter : BasePagePresenter
     {
-        readonly Logger logger;
+        readonly AgentLogger agentLogger;
         readonly EnvLoader envLoader;
-        readonly DockerSetupService dockerSetupService;
+        readonly DockerInitializer dockerInitializer;
         readonly OllamaSetupService ollamaSetupService;
 
         public SetUpPagePresenter(
-            Logger logger,
+            AgentLogger agentLogger,
             EnvLoader envLoader,
-            DockerSetupService dockerSetupService,
+            DockerInitializer dockerInitializer,
             OllamaSetupService ollamaSetupService)
         {
-            this.logger = logger;
+            this.agentLogger = agentLogger;
             this.envLoader = envLoader;
-            this.dockerSetupService = dockerSetupService;
+            this.dockerInitializer = dockerInitializer;
             this.ollamaSetupService = ollamaSetupService;
         }
 
         protected override async UniTask InitializeAsync(CancellationToken ct)
         {
-            logger.Initialize();
+            agentLogger.Initialize();
             await envLoader.LoadAsync(ct);
-            await dockerSetupService.EnsureReadyAsync(ct);
+            await dockerInitializer.InitializeAsync(ct);
             await ollamaSetupService.EnsureReadyAsync(ct);
         }
     }

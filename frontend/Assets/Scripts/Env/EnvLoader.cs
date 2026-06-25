@@ -8,12 +8,10 @@ namespace DA.Env
     {
         readonly DotEnvLoader dotEnvLoader;
         readonly EnvVariablesHolder envVariablesHolder;
-        readonly Logger logger;
 
         internal EnvLoader(
             DotEnvLoader dotEnvLoader,
-            EnvVariablesHolder envVariablesHolder,
-            Logger logger
+            EnvVariablesHolder envVariablesHolder
         )
         {
             this.dotEnvLoader = dotEnvLoader;
@@ -33,8 +31,6 @@ namespace DA.Env
                 VoicevoxUrl: dotEnvVariables["VOICEVOX_URL"]
             );
             envVariablesHolder.Set(envVariables);
-            
-            logger.Log(LogLevel.Info, "EnvLoaded",  envVariables.ToString());
         }
 
         static EnvProfile GetEnvProfile()
