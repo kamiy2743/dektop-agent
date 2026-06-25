@@ -1,27 +1,23 @@
 ﻿using System.Threading;
 using Cysharp.Threading.Tasks;
+using DA.Page;
+using GameKit.UIFramework.Page;
 using VContainer.Unity;
-using DA.Agent;
-using DA.UI;
-using UnityEngine;
 
 namespace DA.Bootstrap
 {
     public sealed class Bootstrapper : IAsyncStartable
     {
-        readonly AgentApplication application;
+        readonly PageContainer pageContainer;
 
-        public Bootstrapper(AgentApplication application)
+        public Bootstrapper(PageContainer pageContainer)
         {
-            this.application = application;
+            this.pageContainer = pageContainer;
         }
 
         async UniTask IAsyncStartable.StartAsync(CancellationToken ct)
         {
-            await application.InitializeAsync(ct);
-            var presenterObject = new GameObject("DesktopAgentPresenter");
-            Object.DontDestroyOnLoad(presenterObject);
-            presenterObject.AddComponent<DesktopAgentPresenter>().Initialize(application);
+            await pageContainer.PushAsync(PageNameConstants.SetUp, PageAnimationMode.Skip, ct);
         }
     }
 }

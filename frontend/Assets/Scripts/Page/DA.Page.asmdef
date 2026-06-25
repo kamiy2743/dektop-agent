@@ -1,12 +1,8 @@
 {
-    "name": "DA.Bootstrap",
-    "rootNamespace": "DA.Bootstrap",
+    "name": "DA.Page",
+    "rootNamespace": "DA.Page",
     "references": [
-        "VContainer",
-        "UniTask",
-        "GameKit.DependencyInjection",
-        "GameKit.UIFramework",
-        "DA.Page"
+        "GameKit.UIFramework"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

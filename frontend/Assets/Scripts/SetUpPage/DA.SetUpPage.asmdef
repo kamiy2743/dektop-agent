@@ -1,11 +1,13 @@
 {
-    "name": "DA.Bootstrap",
-    "rootNamespace": "DA.Bootstrap",
+    "name": "DA.SetUpPage",
+    "rootNamespace": "DA.SetUpPage",
     "references": [
         "VContainer",
         "UniTask",
+        "UnityScreenNavigator",
         "GameKit.DependencyInjection",
         "GameKit.UIFramework",
+        "GameKit.UIComponent",
         "DA.Page"
     ],
     "includePlatforms": [],
