@@ -471,10 +471,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3441061063125661666, guid: cb52dfc2731655c49909d8fdc51e5486, type: 3}
       propertyPath: registrations.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3441061063125661666, guid: cb52dfc2731655c49909d8fdc51e5486, type: 3}
-      propertyPath: 'registrations.Array.data[0]'
+      propertyPath: 'registrations.Array.data[1]'
       value: 
       objectReference: {fileID: 418618790}
     - target: {fileID: 7649690648911271534, guid: cb52dfc2731655c49909d8fdc51e5486, type: 3}

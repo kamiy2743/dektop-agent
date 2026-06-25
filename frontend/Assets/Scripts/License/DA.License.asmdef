@@ -1,0 +1,16 @@
+{
+    "name": "DA.License",
+    "rootNamespace": "DA.License",
+    "references": [
+        "GameKit.License"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

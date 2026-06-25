@@ -1,0 +1,19 @@
+{
+    "name": "DA.ScriptableObject",
+    "rootNamespace": "DA.ScriptableObject",
+    "references": [
+        "VContainer",
+        "GameKit.DependencyInjection",
+        "GameKit.License",
+        "DA.License"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
