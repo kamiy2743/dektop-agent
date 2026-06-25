@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using GameKit.File;
 
 namespace DA.Env
 {
@@ -10,33 +11,8 @@ namespace DA.Env
     {
         public async UniTask<Dictionary<string, string>> LoadAsync(EnvProfile envProfile, CancellationToken ct)
         {
-            var filePath = GetFilePath(envProfile);
-            return await ReadAsync(filePath, ct);
-        }
-
-        static string GetFilePath(EnvProfile envProfile)
-        {
-            var fileName = $".env.{envProfile.Value}";
-            var currentDirectory = Directory.GetCurrentDirectory();
-            var directory = currentDirectory;
-
-            while (!string.IsNullOrWhiteSpace(directory))
-            {
-                var candidate = Path.Combine(directory, fileName);
-                if (File.Exists(candidate))
-                {
-                    return candidate;
-                }
-
-                var parent = Directory.GetParent(directory);
-                if (parent == null)
-                {
-                    break;
-                }
-                directory = parent.FullName;
-            }
-
-            throw new FileNotFoundException($"{fileName}が見つかりません。");
+            var filePath = FileFinder.FindInParent($".env.{envProfile.Value}");
+            return await ReadAsync(filePath.Value, ct);
         }
 
         static async UniTask<Dictionary<string, string>> ReadAsync(string path,  CancellationToken ct)

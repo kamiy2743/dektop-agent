@@ -3,6 +3,7 @@ using System.Threading;
 using Cysharp.Diagnostics;
 using Cysharp.Threading.Tasks;
 using DA.Env;
+using GameKit.File;
 using Zx;
 
 namespace DA.Docker
@@ -21,6 +22,15 @@ namespace DA.Docker
 
         public async UniTask InitializeAsync(CancellationToken ct)
         {
+            await InitializeDaemonAsync(ct);
+
+            var envProfile = envVariablesHolder.Get().EnvProfile;
+            var composeFilePath = FileFinder.FindInParent($"docker-compose.{envProfile.Value}.yml");
+            await $"docker compose -f {composeFilePath.Value} up -d";
+        }
+
+        static async UniTask InitializeDaemonAsync(CancellationToken ct)
+        {
             if (await IsDockerCommandAvailable(ct))
             {
                 return;
@@ -36,9 +46,6 @@ namespace DA.Docker
                     return;
                 }
             }
-            
-            var envProfile = envVariablesHolder.Get().EnvProfile;
-            await $"docker compose -f docker-composer.{envProfile.Value}.yml up -d";
         }
 
         static async UniTask<bool> IsDockerCommandAvailable(CancellationToken ct)

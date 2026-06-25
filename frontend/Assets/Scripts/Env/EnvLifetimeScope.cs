@@ -15,6 +15,7 @@ namespace DA.Env
         public override void Configure(IContainerBuilder builder)
         {
             builder.Register<EnvLoader>(Lifetime.Singleton);
+            builder.Register<DotEnvLoader>(Lifetime.Singleton);
             builder.Register<EnvVariablesHolder>(Lifetime.Singleton);
         }
     }
