@@ -1,0 +1,10 @@
+{
+    "name": "DA.Docker",
+    "rootNamespace": "DA.Docker",
+    "references": [
+        "UniTask",
+        "DA.Env",
+        "DA.Logging"
+    ],
+    "autoReferenced": true
+}
