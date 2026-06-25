@@ -13,11 +13,13 @@ services:
 
   mysql:
     image: mysql:8.4
+    env_file:
+      - .env.dev
     environment:
-      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
-      MYSQL_USER_FILE: /run/secrets/mysql_user
-      MYSQL_PASSWORD_FILE: /run/secrets/mysql_user_password
-      MYSQL_DATABASE: dektop-agent
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_0900_ai_ci
@@ -29,10 +31,6 @@ services:
       - "127.0.0.1:10012:3306"
     networks:
       - egress
-    secrets:
-      - mysql_root_password
-      - mysql_user
-      - mysql_user_password
     restart: unless-stopped
 
 networks:
@@ -40,11 +38,3 @@ networks:
 
 volumes:
   mysql-data:
-
-secrets:
-  mysql_root_password:
-    file: ./secrets/dev/mysql_root_password
-  mysql_user:
-    file: ./secrets/dev/mysql_user
-  mysql_user_password:
-    file: ./secrets/dev/mysql_user_password
