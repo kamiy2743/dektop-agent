@@ -1,5 +1,6 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using DA.Logging;
 
 namespace DA.Env
 {
@@ -7,14 +8,17 @@ namespace DA.Env
     {
         readonly DotEnvLoader dotEnvLoader;
         readonly EnvVariablesHolder envVariablesHolder;
+        readonly Logger logger;
 
         internal EnvLoader(
             DotEnvLoader dotEnvLoader,
-            EnvVariablesHolder envVariablesHolder
+            EnvVariablesHolder envVariablesHolder,
+            Logger logger
         )
         {
             this.dotEnvLoader = dotEnvLoader;
             this.envVariablesHolder = envVariablesHolder;
+            this.logger = logger;
         }
 
         public async UniTask LoadAsync(CancellationToken ct)
@@ -29,6 +33,8 @@ namespace DA.Env
                 VoicevoxUrl: dotEnvVariables["VOICEVOX_URL"]
             );
             envVariablesHolder.Set(envVariables);
+            
+            logger.Log(LogLevel.Info, "EnvLoaded",  envVariables.ToString());
         }
 
         static EnvProfile GetEnvProfile()

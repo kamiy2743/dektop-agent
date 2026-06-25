@@ -9,9 +9,9 @@
         "GameKit.UIFramework",
         "GameKit.UIComponent",
         "DA.Page",
-        "DA.Docker",
-        "DA.Environment",
         "DA.Logging",
+        "DA.Env",
+        "DA.Docker",
         "DA.Ollama"
     ],
     "includePlatforms": [],

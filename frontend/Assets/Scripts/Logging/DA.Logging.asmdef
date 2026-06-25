@@ -1,6 +1,7 @@
 {
     "name": "DA.Logging",
     "rootNamespace": "DA.Logging",
-    "references": ["UnityEngine.CoreModule"],
+    "references": [
+    ],
     "autoReferenced": true
 }
