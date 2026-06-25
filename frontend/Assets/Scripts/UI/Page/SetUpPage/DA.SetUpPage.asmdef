@@ -8,7 +8,11 @@
         "GameKit.DependencyInjection",
         "GameKit.UIFramework",
         "GameKit.UIComponent",
-        "DA.Page"
+        "DA.Page",
+        "DA.Docker",
+        "DA.Environment",
+        "DA.Logging",
+        "DA.Ollama"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
