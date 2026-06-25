@@ -2,15 +2,7 @@ name: desktop-agent-dev
 
 services:
   voicevox:
-    image: voicevox/voicevox_engine:nvidia-ubuntu22.04-0.26.0-dev
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities:
-                - gpu
+    image: voicevox/voicevox_engine:cpu-ubuntu22.04-0.26.0-dev
     security_opt:
       - no-new-privileges:true
     ports:
